@@ -72,6 +72,4 @@ class MemeTableViewController: UITableViewController {
         let controller = self.storyboard?.instantiateViewControllerWithIdentifier("memeEditorViewController") as! MemeEditorViewController
         self.presentViewController(controller, animated: true, completion: nil)
     }
-    
-
 }

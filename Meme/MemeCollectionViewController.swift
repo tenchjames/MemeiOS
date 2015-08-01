@@ -27,7 +27,6 @@ class MemeCollectionViewController: UICollectionViewController, UICollectionView
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: UICollectionViewDataSource
@@ -35,7 +34,6 @@ class MemeCollectionViewController: UICollectionViewController, UICollectionView
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
-
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memes.count

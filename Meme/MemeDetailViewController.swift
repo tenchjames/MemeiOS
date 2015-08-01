@@ -33,12 +33,10 @@ class MemeDetailViewController: UIViewController {
             let deleteIcon = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Trash, target: self, action: "confirmDelete")
             self.navigationItem.rightBarButtonItem = deleteIcon
         }
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func confirmDelete() {
