@@ -10,6 +10,7 @@ import UIKit
 
 class MemeDetailViewController: UIViewController {
     var meme: Meme?
+    // the specific meme to get from the array
     var memeIndex: Int?
     @IBOutlet weak var memeImageView: UIImageView!
     
@@ -57,9 +58,17 @@ class MemeDetailViewController: UIViewController {
         let applicaionDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
         if let index = memeIndex {
             applicaionDelegate.memes.removeAtIndex(index)
-            // after delte, pop back to table / collection view as image will not be available any longer
+            // after delete, pop back to table / collection view as image will not be available any longer
             self.navigationController?.popViewControllerAnimated(true)
         }
     }
 
+    @IBAction func editMeme(sender: AnyObject) {
+        let controller = self.storyboard?.instantiateViewControllerWithIdentifier("memeEditorViewController") as! MemeEditorViewController
+        controller.indexOfMemeToEdit = memeIndex
+        // when done editing this one meme, pop the user back to the initial view
+        self.presentViewController(controller, animated: true) {
+            self.navigationController?.popViewControllerAnimated(true)
+        }
+    }
 }

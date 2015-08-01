@@ -4,6 +4,7 @@
 //
 //  Created by James Tench on 7/31/15.
 //  Copyright (c) 2015 James Tench. All rights reserved.
+//  Custom TableView cell for memes
 //
 
 import UIKit
@@ -15,13 +16,10 @@ class MemeTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

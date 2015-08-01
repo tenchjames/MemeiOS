@@ -20,7 +20,8 @@ UITextFieldDelegate {
     @IBOutlet weak var memeImageView: UIImageView!
     @IBOutlet weak var topToolbar: UIToolbar!
     @IBOutlet weak var bottomToolbar: UIToolbar!
-    // default text color to customize
+    
+    // default text color
     var memeTextColor = UIColor.whiteColor()
     var topText = "TOP"
     var bottomText = "BOTTOM"
@@ -43,7 +44,7 @@ UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // if the view was passed a meme index to edit a meme configure
+        // if the view was passed a meme index to edit a meme configure the view based on that image
         if let index = indexOfMemeToEdit {
             let applicationDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
             let meme = applicationDelegate.memes[index]
@@ -74,10 +75,10 @@ UITextFieldDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     override func prefersStatusBarHidden() -> Bool {
+        // we don't want the status bar in this modal view
         return true
     }
     
@@ -103,12 +104,14 @@ UITextFieldDelegate {
     
     func keyboardWillShow(notification: NSNotification) {
         // only toggle if bottom text field is the first responder
+        // bumps the view up by the height of the keyboard
         if bottomTextField.isFirstResponder() {
             self.view.frame.origin.y -= getKeyboardHeight(notification)
         }
     }
     
     func keyboardWillHide(notification: NSNotification) {
+        // resets the view to initial y location after keyboard is closed
         if bottomTextField.isFirstResponder() {
             self.view.frame.origin.y = 0
         }
@@ -148,10 +151,10 @@ UITextFieldDelegate {
         pickAnImage(type)
     }
     
-
     @IBAction func cancelMemeEditor(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             memeImageView.image = image
@@ -185,7 +188,6 @@ UITextFieldDelegate {
     func save() {
         // make a new Meme, if edit flag is set replace that meme with new meme
         // else append a brand new meme to the array
-        
         if let memedImage = memeImageView.image {
             var meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text,
                 originalImage: memedImage, memedImage: generateMemedImage())

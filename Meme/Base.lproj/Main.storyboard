@@ -60,14 +60,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HKg-aW-vax">
                                 <rect key="frame" x="0.0" y="44" width="600" height="512"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O1f-3g-Qs3">
-                                <rect key="frame" x="0.0" y="58" width="600" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O1f-3g-Qs3">
+                                <rect key="frame" x="0.0" y="58" width="600" height="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NaP-j0-bf7">
-                                <rect key="frame" x="0.0" y="516" width="600" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NaP-j0-bf7">
+                                <rect key="frame" x="0.0" y="529" width="600" height="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -144,7 +144,7 @@
             </objects>
             <point key="canvasLocation" x="-679" y="-1259"/>
         </scene>
-        <!--Item-->
+        <!--Meme Table View Controller-->
         <scene sceneID="bdK-Gv-JkQ">
             <objects>
                 <tableViewController id="iHp-L1-uGQ" customClass="MemeTableViewController" customModule="Meme" customModuleProvider="target" sceneMemberID="viewController">
@@ -203,7 +203,7 @@
                             <outlet property="delegate" destination="iHp-L1-uGQ" id="Avo-qS-gb4"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="hK6-6O-bgD"/>
+                    <tabBarItem key="tabBarItem" title="" image="tableViewIcon" id="hK6-6O-bgD"/>
                     <navigationItem key="navigationItem" id="MC6-MX-hML">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="DWY-vb-CNE">
                             <connections>
@@ -237,7 +237,11 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="44" id="6Li-Wv-3ef"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Edit" id="g3X-yT-vSg"/>
+                                    <barButtonItem title="Edit" id="g3X-yT-vSg">
+                                        <connections>
+                                            <action selector="editMeme:" destination="rWc-bi-yQ8" id="czd-FZ-tUg"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -260,7 +264,7 @@
             </objects>
             <point key="canvasLocation" x="914" y="-939"/>
         </scene>
-        <!--Item-->
+        <!--Meme Collection View Controller-->
         <scene sceneID="Nyy-DE-Zch">
             <objects>
                 <collectionViewController id="s5g-hh-3rs" customClass="MemeCollectionViewController" customModule="Meme" customModuleProvider="target" sceneMemberID="viewController">
@@ -305,7 +309,7 @@
                             <outlet property="delegate" destination="s5g-hh-3rs" id="Wba-aD-HMc"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Item" id="Lkk-vg-w2V"/>
+                    <tabBarItem key="tabBarItem" title="" image="collectionViewIcon" id="Lkk-vg-w2V"/>
                     <navigationItem key="navigationItem" id="GnN-jG-Uuf">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="NtL-Az-jfE">
                             <connections>
@@ -355,4 +359,8 @@
             <point key="canvasLocation" x="-679" y="-587"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="collectionViewIcon" width="22" height="22"/>
+        <image name="tableViewIcon" width="22" height="22"/>
+    </resources>
 </document>
