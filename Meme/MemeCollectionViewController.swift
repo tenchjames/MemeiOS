@@ -10,7 +10,7 @@ import UIKit
 
 let reuseIdentifier = "collectionViewCell"
 
-class MemeCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class MemeCollectionViewController: UICollectionViewController {
     var memes: [Meme]!
     
     override func viewWillAppear(animated: Bool) {
